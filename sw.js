@@ -41,7 +41,7 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-
+//from https://github.com/mdn/sw-test/blob/gh-pages/sw.js
   event.respondWith(caches.match(event.request).then(function(response) {
     if (response !== undefined) {
       return response;

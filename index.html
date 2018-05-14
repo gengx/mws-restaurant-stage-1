@@ -12,24 +12,25 @@
 
 <body>
   <header>
-    <nav>
-      <h1><a href="/">Restaurant Reviews</a></h1>
+    <nav role="navigation">
+      <h1><a href="/" tabindex="-1">Restaurant Reviews</a></h1>
     </nav>
   </header>
 
-  <main id="maincontent">
+  <main id="maincontent" role="main">
     <section id="map-container">
-      <div id="map"></div>
+      <div id="map" role="application" aria-hidden="true" aria-describedby="map-alt"></div>
+      <div hidden id="map-alt">A google map that shows all filtered restaurants</div>
     </section>
     <section>
       <div class="filter-options">
         <h2>Filter Results</h2>
 
-        <select id="neighborhoods-select" name="neighborhoods" title="select neighborhoods" onchange="updateRestaurants()">
+        <select id="neighborhoods-select" name="neighborhoods" title="select neighborhoods" onchange="updateRestaurants()" tabindex="0">
           <option value="all">All Neighborhoods</option>
         </select>
 
-        <select id="cuisines-select" name="cuisines" title="select cuisines" onchange="updateRestaurants()">
+        <select id="cuisines-select" name="cuisines" title="select cuisines" onchange="updateRestaurants()" tabindex="0">
           <option value="all">All Cuisines</option>
         </select>
       </div>
